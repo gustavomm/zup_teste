@@ -14,9 +14,7 @@ class GetShots {
     else{
       query = 'https://api.dribbble.com/v1/shots' + this.token;
     }
-    let json = this.$http.jsonp(query);
-    console.log(json);
-    return json;
+    return this.$http.jsonp(query);
   }
 }
 

@@ -4,7 +4,11 @@ export default class ListShotsController {
   }
 
   showShots() {
-  	this.shots = this.shots.getJson('');
+    let that = this;
+  	this.shots.getJson('').then(function(data){
+        console.log(data.data.data);
+        that.shots = data.data.data;
+    });
   }
 }
 
