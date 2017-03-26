@@ -1,6 +1,7 @@
 import angular from 'angular';
 import uirouter from 'angular-ui-router';
 import 'bootstrap/dist/css/bootstrap.css';
+import '../style/app.css';
 import {trustUrl, routing} from './app.config';
 import listShots from './features/listShots';
 
