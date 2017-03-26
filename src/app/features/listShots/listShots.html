@@ -1,29 +1,31 @@
 <div id="listShots-header" ng-init="listShots.showShots()">
-	<div id="lista-shots" ng-repeat="shot in listShots.shots" ng-class="row|($index % 4 == 0)">
- 		<div class="col-sm-3 well" href="#/shots/{{ shot.id }}">
-      <div>
-          <img class="img-thumbnail" ng-src="{{ shot.images.teaser }}" />
-      </div>
-      
-      <div class="user" href="#/user/{{ shot.user.username }}">
-          {{ shot.user.name }}
-      </div>
-      <div class="stats">
-          <span class="stat">
-              <i class="icon-eye-open"></i>
-              {{ shot.views_count }}
-          </span>
-          <span class="stat">
-              <i class="icon-comment"></i>
-              {{ shot.comments_count }}
-          </span>
-          <span class="stat">
-              <i class="icon-heart"></i>
-              {{ shot.likes_count }}
-          </span>
-      </div>
-    </div>
-  </div>
+	<div id="lista-shots" ng-repeat="shot in listShots.shots">
+		<div class= "col-md-3">
+	 		<div class="card">
+	      <div>
+	          <img class="img-thumbnail" ng-src="{{ shot.images.teaser }}" />
+	      </div>
+	      
+	      <div class="user" href="#/user/{{ shot.user.username }}">
+	          {{ shot.user.name }}
+	      </div>
+	      <div class="stats">
+	          <span class="stat">
+	              <i class="icon-eye-open"></i>
+	              {{ shot.views_count }}
+	          </span>
+	          <span class="stat">
+	              <i class="icon-comment"></i>
+	              {{ shot.comments_count }}
+	          </span>
+	          <span class="stat">
+	              <i class="icon-heart"></i>
+	              {{ shot.likes_count }}
+	          </span>
+	      </div>
+	    </div>
+	  </div>
+ 	</div>
   <button class="btn btn-primary" ng-click="loadNexPage()" ng-show="list.page < list.pages">
     Load More
     </button>
