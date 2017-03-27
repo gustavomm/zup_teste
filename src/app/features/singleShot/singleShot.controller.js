@@ -1,14 +1,10 @@
-export default class ListShotsController {
+export default class SingleShotController {
   constructor(getShots) {
     this.getShotsService = getShots;
-    this.shots = '';
-    this.page = 0;
+    this.shot = '';
   }
 
-  showShots() {
-    this.page++;
-    let that = this;
-  	this.getShotsService.getJson(this.page).then(function(data){
+  this.getShotsService.getSingleShot(this.page).then(function(data){
       if (that.shots != ''){
         for (var key in data.data.data) {
           let tmp = {};
@@ -23,8 +19,6 @@ export default class ListShotsController {
       }  
       console.log(that.shots);
     });
-  }
-
 }
 
-ListShotsController.$inject = [ 'getShots' ];
+SingleShotController.$inject = [ 'getShots' ];

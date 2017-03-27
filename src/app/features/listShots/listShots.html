@@ -1,32 +1,36 @@
 <div id="listShots-header" ng-init="listShots.showShots()">
 	<div id="lista-shots" ng-repeat="shot in listShots.shots">
-		<div class= "col-md-3">
-	 		<div class="card">
+		<div class= "col-xs-6 col-md-3">
+	 		<div class="card" ng-id="{{ shot.id }}" ng-href="/{{ shot.id }}">
 	      <div>
 	          <img class="img-thumbnail" ng-src="{{ shot.images.teaser }}" />
+	          <div class="overlay">
+			      	<p class="desc-title">{{ shot.title }}</p>
+			      	<p class="desc-date">{{ shot.created_at | date }}</p>
+			      </div>
 	      </div>
-	      
-	      <div class="user" href="#/user/{{ shot.user.username }}">
+	      <div>
+	          <span>
+	              <i class="shoticon glyphicon glyphicon-eye-open"></i>
+	              <a class="icon-info">{{ shot.views_count }}</a>
+	          </span>
+	          <span>
+	              <i class="shoticon glyphicon glyphicon-comment"></i>
+	              <a class="icon-info">{{ shot.comments_count }}</a>
+	          </span>
+	          <span>
+	              <i class="shoticon glyphicon glyphicon-heart"></i>
+	              <a class="icon-info">{{ shot.likes_count }}</a>
+	          </span>
+	      </div>
+	      <p class = "user">
 	          {{ shot.user.name }}
-	      </div>
-	      <div class="stats">
-	          <span class="stat">
-	              <i class="icon-eye-open"></i>
-	              {{ shot.views_count }}
-	          </span>
-	          <span class="stat">
-	              <i class="icon-comment"></i>
-	              {{ shot.comments_count }}
-	          </span>
-	          <span class="stat">
-	              <i class="icon-heart"></i>
-	              {{ shot.likes_count }}
-	          </span>
-	      </div>
+	      </p>
 	    </div>
 	  </div>
  	</div>
-  <button class="btn btn-primary" ng-click="listShots.showShots()">
+
+  <button class="btn btn-success btn-block" ng-click="listShots.showShots()">
     Load More
-    </button>
+  </button>
 </div>

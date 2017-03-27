@@ -10,6 +10,11 @@ class GetShots {
     let query = 'https://api.dribbble.com/v1/shots' + '?page=' + page + '&' + this.token ;
     return this.$http.jsonp(query);
   }
+
+  getSingleShot(id) {
+  	let query = 'https://api.dribbble.com/v1/shots/' + id + '?' + this.token;
+  	return this.$http.jsonp(query);
+  }
 }
 
 GetShots.$inject = ['$http'];
