@@ -6,12 +6,12 @@
     <div class="nav navbar-nav navbar-buttons">
     	<li ng-click="listShots.smallShots()">
 				<a> 
-	        <span class="glyphicon glyphicon-th"></span>
+	        <span class="glyphicon glyphicon-th" role="button"></span>
 		    </a>
 		  </li>
     	<li ng-click="listShots.normalShots()">
 		    <a> 
-	        <span class="glyphicon glyphicon-th-large"></span>
+	        <span class="glyphicon glyphicon-th-large" role="button"></span>
 		    </a>
 			</li>
     </div>
@@ -65,7 +65,7 @@
 
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
+  <div class="modal-dialog modal-admin" role="document">
     <div class="modal-content">
       <div class="modal-header moodal-user">
         <button type="button" class="close btn-close-modal" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -76,9 +76,24 @@
       	</h5>
       </div>
       <div class="modal-body">
-      	<img class="img-thumbnail" ng-src="{{listShots.singleShot.images.hidpi}}"/>
+      	<img class="img-thumbnail img-singleshot" ng-src="{{listShots.singleShot.images.hidpi}}"/>
+      	<div class="singleShot-description"></div>
       </div>
       <div class="modal-footer">
+      	<div class="icon-wrapper">
+	          <span>
+	              <span class="singleShotIcon glyphicon glyphicon-eye-open"></span>
+	              <span class="icon-info">{{ listShots.singleShot.views_count }}</span>
+	          </span>
+	          <span>
+	              <span class="singleShotIcon glyphicon glyphicon-comment"></span>
+	              <span class="icon-info">{{ listShots.singleShot.comments_count }}</span>
+	          </span>
+	          <span>
+	              <span class="singleShotIcon glyphicon glyphicon-heart"></span>
+	              <span class="icon-info">{{ listShots.singleShot.likes_count }}</span>
+	          </span>
+	      </div>
       </div>
     </div>
   </div>

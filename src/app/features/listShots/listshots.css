@@ -11,6 +11,7 @@
   /*border: 1px solid #DCDCDC;
   border-radius: 2px;*/
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+  cursor: pointer;
 }
 
 .input-search{
@@ -62,10 +63,12 @@
 .shoticon{
   padding-left: 5px;
   color: #828282;
+  display:inline-block;
 }
 
 .icon-info{
   color: #828282;
+  display:inline-block;
 }
 
 .user-avatar{
@@ -96,5 +99,34 @@
 }
 
 .btn-close-modal{
-	float:right;
+	float: right;
+}
+
+.modal-dialog{
+	display: inline-block;
+	max-width: 820px;
+    width: auto !important;
+    text-align: left;
+}
+
+.modal-content{display:inline-block;}
+
+.modal.in{
+     text-align: center;
+}
+
+.singleShotIcon{
+  padding-left: 10px;
+  color: #828282;
+  font-size: 20px;
+  vertical-align: middle;
+}
+
+.icon-wrapper{
+	display: inline-block;
+}
+
+.singleShot-description{
+	color: #828282;
+	padding-top: 10px;
 }

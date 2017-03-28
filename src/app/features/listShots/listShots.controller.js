@@ -1,9 +1,10 @@
+
+
 export default class ListShotsController {
-  constructor(getShots, $scope) {
+  constructor(getShots) {
     this.getShotsService = getShots;
     this.shots = '';
     this.page = 0;
-    this.$scope = $scope;
     this.layout = {
       col: 'col-xs-6 col-sm-4 col-md-3 col-lg-2',
       img: 'teaser'
@@ -43,7 +44,12 @@ export default class ListShotsController {
 
   selectShot(shot){
     this.singleShot = shot;
+    this.showDescription(shot.description);
+  }
+
+  showDescription(text){
+    $('div.singleShot-description').html(text);
   }
 }
 
-ListShotsController.$inject = [ 'getShots', '$scope' ];
+ListShotsController.$inject = [ 'getShots' ];

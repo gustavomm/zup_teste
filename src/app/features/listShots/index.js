@@ -1,5 +1,6 @@
 import angular from 'angular';
 import uirouter from 'angular-ui-router';
+// import ngSanitize from 'angular-sanitize';
 import './listshots.css';
 import routing from './listShots.routes';
 import ListShotsController from './listShots.controller';

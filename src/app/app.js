@@ -1,5 +1,6 @@
 import angular from 'angular';
 import uirouter from 'angular-ui-router';
+// import ngSanitize from 'angular-sanitize';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/js/bootstrap.js'
 import '../style/app.css';
