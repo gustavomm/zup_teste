@@ -1,3 +1,53 @@
 #listShots-header {
   text-align: center;
 }
+
+.navbar-wrapper{
+	padding-left: 5%;
+    padding-right: 5%;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .3s ease;
+  background-color: #F4F4F4;
+}
+
+.card:hover .overlay{
+  opacity: 0.8;
+}
+
+.desc-date{
+  font-size: 11px;
+  position: absolute;
+  bottom: 45px;
+  left: 30px;
+}
+
+.desc-title{
+  font-size: 12px;
+  position: absolute;
+  top: 10px;
+  left: 30px;
+}
+
+.user {
+  font-size: 12px;
+  color: #389CDF;
+}
+
+.shoticon{
+  padding-left: 5px;
+  color: #828282;
+}
+
+.icon-info{
+  color: #828282;
+}
