@@ -30,7 +30,7 @@
 <div id="listShots-header" ng-init="listShots.showShots()">
 	<div id="lista-shots" ng-repeat="shot in listShots.shots">
 		<div class="{{ listShots.layout.col }}">
-	 		<div class="card" ng-id="{{ shot.id }}" ng-href="/{{ shot.id }}">
+	 		<div class="card" ng-id="{{ shot.id }}" ng-click="listShots.selectShot(shot)" data-toggle="modal" data-target="#myModal">
 	      <div>
 	          <img class="img-thumbnail" ng-src="{{ listShots.layout.img === 'teaser' ? shot.images.teaser : shot.images.normal }}"/>
 	          <div class="overlay">
@@ -62,4 +62,23 @@
   <button class="btn btn-success btn-block" ng-click="listShots.showShots()">
     Load More
   </button>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">{{ listShots.singleShot.id }}</h4>
+      </div>
+      <div class="modal-body">
+        {{ listShots.singleShot.id }}
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
 </div>

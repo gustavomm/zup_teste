@@ -8,6 +8,7 @@ export default class ListShotsController {
       col: 'col-xs-6 col-sm-4 col-md-3 col-lg-2',
       img: 'teaser'
     };
+    this.singleShot = '';
   }
 
   showShots() {
@@ -40,6 +41,9 @@ export default class ListShotsController {
     this.layout.img = 'normal';
   }
 
+  selectShot(shot){
+    this.singleShot = shot;
+  }
 }
 
 ListShotsController.$inject = [ 'getShots', '$scope' ];
