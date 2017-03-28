@@ -11,8 +11,8 @@ class GetShots {
     return this.$http.jsonp(query);
   }
 
-  getSingleShot(id) {
-  	let query = 'https://api.dribbble.com/v1/shots/' + id + '?' + this.token;
+  getExtraContent(id, option) {
+  	let query = 'https://api.dribbble.com/v1/shots/' + id + '/' + option + '?' + this.token;
   	return this.$http.jsonp(query);
   }
 }

@@ -1,7 +1,7 @@
 
 
 export default class ListShotsController {
-  constructor(getShots) {
+  constructor(getShots, $sce) {
     this.getShotsService = getShots;
     this.shots = '';
     this.page = 0;
@@ -10,6 +10,8 @@ export default class ListShotsController {
       img: 'teaser'
     };
     this.singleShot = '';
+    this.comments = '';
+    this.$sce = $sce;
   }
 
   showShots() {
@@ -32,6 +34,16 @@ export default class ListShotsController {
     });
   }
 
+  showComments(id){
+    let that = this;
+    this.getShotsService.getExtraContent(id, 'comments').then(function(data){
+      that.comments = data.data.data;
+      for (var key in that.comments) {
+        that.comments[key].body = that.$sce.trustAsHtml(that.comments[key].body);
+      }
+    });
+  }
+
   smallShots(){
     this.layout.col = 'col-xs-6 col-sm-4 col-md-3 col-lg-2';
     this.layout.img = 'teaser';
@@ -45,6 +57,7 @@ export default class ListShotsController {
   selectShot(shot){
     this.singleShot = shot;
     this.showDescription(shot.description);
+    this.showComments(shot.id);
   }
 
   showDescription(text){
@@ -52,4 +65,4 @@ export default class ListShotsController {
   }
 }
 
-ListShotsController.$inject = [ 'getShots' ];
+ListShotsController.$inject = [ 'getShots', '$sce'];
