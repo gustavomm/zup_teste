@@ -29,7 +29,14 @@ export default class ListShotsController {
       }
       else {
         that.shots = data.data.data;
-      }  
+      }
+      for (var key in that.shots){
+        let int_key = parseInt(key);
+        console.log(that.page);
+        if(int_key >= ((12 * that.page) - 12) && (int_key < 12*that.page)){
+          that.shots[key].description = that.$sce.trustAsHtml(that.shots[key].description);
+        }
+      }
       console.log(that.shots);
     });
   }

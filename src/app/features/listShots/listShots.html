@@ -43,6 +43,7 @@
 	          <img class="img-thumbnail" ng-src="{{ listShots.layout.img === 'teaser' ? shot.images.teaser : shot.images.normal }}"/>
 	          <div class="overlay">
 			      	<p class="desc-title">{{ shot.title }}</p>
+			      	<p class="shotList-description" ng-bind-html="shot.description"></p>
 			      	<p class="desc-date">{{ shot.created_at | date }}</p>
 			      </div>
 	      </div>
