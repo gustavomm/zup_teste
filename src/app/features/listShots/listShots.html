@@ -86,7 +86,7 @@
       </div>
       <div class="modal-body">
       	<img class="img-thumbnail img-singleshot" ng-src="{{listShots.singleShot.images.hidpi}}"/>
-      	<div class="singleShot-description"></div>
+      	<div class="singleShot-description" ng-bind-html="listShots.singleShot.description"></div>
       	<div class="comments">
       		<div class="comment" ng-repeat="comment in listShots.comments">
       			<img class="img-circle comment-avatar" ng-src="{{ comment.user.avatar_url }}"></img>
